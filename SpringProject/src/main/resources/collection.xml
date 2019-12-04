@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="student" class="com.emexo.spring.di.collection.Student">
+        <property name="studentId" value="1"/>
+        <property name="studentName" value="Regu"/>
+    </bean>
+
+    <bean id="college" class="com.emexo.spring.di.collection.College">
+        <property name="staffName">
+            <list>
+                <value>Gary</value>
+                <value>Natalia</value>
+                <value>Adam</value>
+            </list>
+        </property>
+
+        <!--<property name="staffName">
+            <list>
+                <ref bean="student"/>
+            </list>
+        </property>-->
+
+        <property name="depName">
+            <set>
+                <value>CSE</value>
+                <value>IT</value>
+                <value>ECE</value>
+            </set>
+        </property>
+
+        <!--<property name="depName">
+           <set>
+               <ref bean="student"/>
+           </set>
+       </property>-->
+
+        <property name="colors">
+            <list>
+                <value>red</value>
+                <value>yellow</value>
+                <value>blue</value>
+            </list>
+        </property>
+        <property name="faculties">
+            <map>
+                <entry key="Java Faculty" value="Sanjay" />
+                <entry key="Spring Faculty" value="Arun" />
+            </map>
+        </property>
+
+       <!-- <property name="faculties">
+            <map>
+                <entry key-ref="student" value-ref="student" />
+            </map>
+        </property>-->
+
+        <property name="capitals">
+            <props>
+                <prop key="Karnataka">Bangalore</prop>
+                <prop key="Tamilnadu">Chennai</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
