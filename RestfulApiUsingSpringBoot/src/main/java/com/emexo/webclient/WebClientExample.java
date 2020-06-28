@@ -31,8 +31,7 @@ public class WebClientExample {
         System.out.println("RESPONSE : " + response.block());
     }
 
-    public void createApplication()
-    {
+    public void createApplication() {
         Application app = new Application();
         app.setDescription("LRI");
         app.setName("LRI");
@@ -42,6 +41,27 @@ public class WebClientExample {
                 .body(Mono.just(app), Application.class)
                 .retrieve()
                 .bodyToMono(Application.class);
+    }
+
+    public void updateApplication() {
+        Application app = new Application();
+        app.setId(1L);
+        app.setDescription("LRI");
+        app.setName("LRI");
+        app.setOwner("JPMC");
+        WebClient webClient = WebClient.create("http://localhost:8080/tza/applicationupdate");
+        Mono<Application> response = webClient.put()
+                .body(Mono.just(app), Application.class)
+                .retrieve()
+                .bodyToMono(Application.class);
+    }
+
+    public void deleteApplication() {
+        WebClient webClient = WebClient.create("http://localhost:8080/tza/applicatiodelete");
+        Mono<Void> response = webClient.delete()
+                .retrieve()
+                .bodyToMono(void.class);
+
     }
 
 }
