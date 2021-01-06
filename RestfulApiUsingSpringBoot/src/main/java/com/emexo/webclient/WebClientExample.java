@@ -9,13 +9,13 @@ public class WebClientExample {
 
     public static void main(String[] args) {
         WebClientExample obj = new WebClientExample();
-        // obj.findAllApplications();
+        //obj.findAllApplications();
         //obj.findApplicationById();
         obj.createApplication();
     }
 
     public void findAllApplications() {
-        WebClient webClient = WebClient.create("http://localhost:8080/tza/applications");
+        WebClient webClient = WebClient.create("http://localhost:8080/application/getAll");
         Flux<Application> result = webClient.get()
                 .retrieve()
                 .bodyToFlux(Application.class);
@@ -36,11 +36,12 @@ public class WebClientExample {
         app.setDescription("LRI");
         app.setName("LRI");
         app.setOwner("JPMC");
-        WebClient webClient = WebClient.create("http://localhost:8080/tza/applicationsave");
+        WebClient webClient = WebClient.create("http://localhost:8080/application/save");
         Mono<Application> response = webClient.post()
                 .body(Mono.just(app), Application.class)
                 .retrieve()
                 .bodyToMono(Application.class);
+        response.block();
     }
 
     public void updateApplication() {
@@ -57,7 +58,7 @@ public class WebClientExample {
     }
 
     public void deleteApplication() {
-        WebClient webClient = WebClient.create("http://localhost:8080/tza/applicatiodelete");
+        WebClient webClient = WebClient.create("http://localhost:8080/tza/applicatiodelete/1");
         Mono<Void> response = webClient.delete()
                 .retrieve()
                 .bodyToMono(void.class);

@@ -12,18 +12,18 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/application")
+@RequestMapping("/api/v1/applications")
 public class ApplicationsController {
     @Autowired
     private ApplicationService applicationService;
 
-    @GetMapping("/applications")
+    @GetMapping
     public ResponseEntity<List<Application>> getAllApplications() {
         List<Application> list = applicationService.listApplications();
         return new ResponseEntity<List<Application>>(list, HttpStatus.OK);
     }
 
-    @GetMapping("/application/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Application> getApplication(@PathVariable("id") long id) {
         try {
             return new ResponseEntity<Application>(applicationService.findApplication(id), HttpStatus.OK);
@@ -32,7 +32,7 @@ public class ApplicationsController {
         }
     }
 
-    @PostMapping("/applicationsave")
+    @PostMapping
     public void submitForm(@RequestBody  Application application) {
         applicationService.save(application);
     }
