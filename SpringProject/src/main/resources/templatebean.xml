@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="template" abstract="true">
+        <property name="name" value="Hathi"/>
+        <property name="age" value="30"/>
+    </bean>
+    <bean id="animal" class="com.emexo.spring.inheritance.Animal" parent="template">
+        <property name="age" value="50"/>
+    </bean>
+    <bean id="elephant" class="com.emexo.spring.inheritance.Elephant" parent="animal">
+        <property name="location" value="Delhi"/>
+    </bean>
+</beans>
