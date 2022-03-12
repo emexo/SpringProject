@@ -22,6 +22,7 @@ public class ApplicationsController {
     @Autowired
     private ApplicationService applicationService;
 
+    //https://localhost:8080/api/v1/applications
     @GetMapping
     public ResponseEntity<List<Application>> getAllApplications() {
         LOGGER.info("Inside the ApplicationsController.getAllApplications");
@@ -36,6 +37,7 @@ public class ApplicationsController {
         }
     }
 
+    //https://localhost:8080/api/v1/applications/1
     @GetMapping("/{id}")
     public ResponseEntity<Application> getApplication(@PathVariable("id") long id) {
         LOGGER.info("Inside ApplicationsController.getApplication, id :{}", id);
@@ -43,12 +45,38 @@ public class ApplicationsController {
             return new ResponseEntity<Application>(applicationService.findApplication(id), HttpStatus.OK);
         } catch (ApplicationNotFoundException ex) {
             LOGGER.error("Exception while getting applications", ex);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    //https://localhost:8080/api/v1/applications?name=appname&id=1
+    @GetMapping("/name")
+    public ResponseEntity<List<Application>> getApplicationByName(@RequestParam("name") String appName, @RequestParam("id") int id) {
+        LOGGER.info("Inside ApplicationsController.getApplication, appName :{}", appName);
+        try {
+            return new ResponseEntity<List<Application>>(applicationService.findApplicationByName(appName), HttpStatus.OK);
+        } catch (ApplicationNotFoundException ex) {
+            LOGGER.error("Exception while getting applications", ex);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
+
     @PostMapping
     public ResponseEntity<String> saveApplication(@RequestBody  Application application) {
+        LOGGER.info("Inside ApplicationController.saveApplication, application:{}", application);
+        try {
+            applicationService.save(application);
+        } catch (ApplicationNotFoundException ex) {
+            LOGGER.error("Exception while getting applications", ex);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>("Application has been saved", HttpStatus.OK);
+    }
+
+    @PutMapping
+    public ResponseEntity<String> updateApplication(@RequestBody  Application application) {
         LOGGER.info("Inside ApplicationController.saveApplication, application:{}", application);
         try {
             applicationService.save(application);
