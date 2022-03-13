@@ -5,6 +5,7 @@ import com.emexo.service.ApplicationService;
 import com.emexo.service.ApplicationServiceTest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Matchers;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -42,7 +43,7 @@ public class ApplicationControllerTest {
     ApplicationService applicationService;
 
     @Test
-    public void getAllApplications() throws Exception {
+    public void testGetAllApplications() throws Exception {
 
         List<Application> applicationList = new ArrayList<>();
         Application application = new Application();
@@ -66,7 +67,7 @@ public class ApplicationControllerTest {
     }
 
     @Test
-    public void getAllApplications1() throws Exception {
+    public void testGetAllApplications1() throws Exception {
         List<Application> applicationList = new ArrayList<>();
         Application application = new Application();
         application.setId(1l);
@@ -85,7 +86,7 @@ public class ApplicationControllerTest {
     }
 
     @Test
-    public void getAllApplicationsWithException() throws Exception {
+    public void testGetAllApplicationsWithException() throws Exception {
 
         when(applicationService.listApplications()).thenThrow(new NullPointerException());
 
@@ -98,7 +99,7 @@ public class ApplicationControllerTest {
         MockHttpServletResponse response = result.getResponse();
 
         //Assert that the return status is OK
-        assertEquals(HttpStatus.NOT_FOUND.value(), response.getStatus());
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.value(), response.getStatus());
     }
 
     @Test
