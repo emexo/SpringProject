@@ -2,7 +2,7 @@ package com.emexo.spring.annotation.bean;
 
 import org.springframework.stereotype.Component;
 
-@Component("org")
+@Component
 public class Organization {
 
     private String OrgName="Infy";

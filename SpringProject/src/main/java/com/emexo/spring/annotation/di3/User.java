@@ -4,6 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+import javax.inject.Inject;
+import javax.inject.Named;
+
 /**
  * @Resource - JSR 250
  * Match by Name
@@ -21,16 +25,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class User {
 
-    @Qualifier("honda")
-   @Autowired
-    Vehicle honda1;
 
-    public User(Honda honda) {
-        this.honda1 = honda;
+    @Autowired
+    Vehicle honda;
+
+    public User() {
     }
 
     public void print() {
-        honda1.engine();
+        honda.engine();
     }
 
 }

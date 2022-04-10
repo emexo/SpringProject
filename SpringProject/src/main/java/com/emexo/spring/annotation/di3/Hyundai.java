@@ -1,6 +1,8 @@
 package com.emexo.spring.annotation.di3;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
+
 
 @Component
 public class Hyundai implements Vehicle {

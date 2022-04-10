@@ -1,14 +1,17 @@
 package com.emexo.spring.annotation.di1;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.inject.Inject;
 import javax.annotation.Resource;
+import javax.inject.Inject;
 
-@Component("org")
+
+@Component
 public class Organization {
     @Value("Infy")
     private String OrgName;
@@ -19,10 +22,11 @@ public class Organization {
     @Value("2000")
     private int established;
 
-    @Resource(name = "employee")
+    @Autowired
     private Employee employee;
 
-    @Inject
+    @Qualifier("address")
+    @Autowired(required = false)
     private Address address;
 
     public void getOrgDetails() {

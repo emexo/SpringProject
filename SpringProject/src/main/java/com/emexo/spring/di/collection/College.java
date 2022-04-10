@@ -9,7 +9,7 @@ public class College {
     private List<String> staffName;
     private Set<String> depName;
     String colors[];
-    Map faculties;
+    Map<String,String> faculties;
     Properties capitals;
 
     public void setStaffName(List<String> staffName) {
@@ -37,6 +37,6 @@ public class College {
         System.out.println("depName : " + depName);
         System.out.println("colors : " + colors[0] +":" + colors[1]);
         System.out.println("faculties : " + faculties);
-        System.out.println("staffName : " + staffName);
+        System.out.println("staffName : " + capitals);
     }
 }

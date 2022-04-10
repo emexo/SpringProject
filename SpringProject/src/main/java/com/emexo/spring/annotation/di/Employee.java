@@ -2,6 +2,7 @@ package com.emexo.spring.annotation.di;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -19,9 +20,13 @@ public class Employee {
     @Value(value = "{Etamin, Electra, PTP}")
     List<String> building;
 
-    @Qualifier("address")
-    @Autowired(required = true)
+
     public Address address;
+
+    @Autowired(required = false)
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public void getEmployeedetails(){
         System.out.println("empId :" + empId);

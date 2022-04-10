@@ -1,6 +1,5 @@
 package com.emexo.spring.javabased;
 
-import com.emexo.spring.annotation.di1.Organization;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class TestMain {

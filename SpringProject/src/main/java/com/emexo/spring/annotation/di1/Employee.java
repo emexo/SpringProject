@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component("employee")
+@Component
 public class Employee {
 
     @Value("10")

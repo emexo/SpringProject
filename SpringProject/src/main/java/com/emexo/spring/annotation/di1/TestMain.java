@@ -1,6 +1,5 @@
 package com.emexo.spring.annotation.di1;
 
-import com.emexo.spring.annotation.di.Employee;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class TestMain {

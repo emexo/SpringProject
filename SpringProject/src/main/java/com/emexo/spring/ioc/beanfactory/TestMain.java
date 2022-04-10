@@ -8,7 +8,7 @@ public class TestMain {
     public static void main(String[] args) {
         XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("beanfactory.xml"));
 
-        Student student = (Student) factory.getBean("stud");
+       Student student = (Student) factory.getBean("stud");
 
         student.getStudentDetails();
 

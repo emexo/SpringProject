@@ -6,7 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestMain {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("autowiring.xml");
-        Employee emp = context.getBean("employee", Employee.class);
-        emp.getEmployeeDetails();
+
+        Student student = context.getBean("student", Student.class);
+        student.getStudentDetails();
     }
 }

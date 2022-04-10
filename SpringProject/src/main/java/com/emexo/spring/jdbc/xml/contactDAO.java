@@ -29,18 +29,15 @@ public class contactDAO {
 
     public List<Contact> getAll() {
         String sqlSelect = "SELECT * FROM contact";
-        List<Contact> listContact = jdbcTemplate.query(sqlSelect,
-                new RowMapper<Contact>() {
-                    public Contact mapRow(ResultSet result, int rowNum) throws SQLException {
-                        Contact contact = new Contact();
-                        contact.setName(result.getString("name"));
-                        contact.setEmail(result.getString("email"));
-                        contact.setAddress(result.getString("address"));
-                        contact.setTelephone(result.getString("telephone"));
-                        return contact;
-                    }
-                });
+        List<Contact> listContact = jdbcTemplate.query(sqlSelect, new ContactRowMapper());
         return listContact;
+
+    }
+
+    public Contact getById(int id) {
+        String sqlSelect = "SELECT * FROM contact where id=?";
+        Contact contact = jdbcTemplate.queryForObject(sqlSelect, new ContactRowMapper(), id);
+        return contact;
 
     }
 }
