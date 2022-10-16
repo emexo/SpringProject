@@ -23,15 +23,19 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public Application findApplication(long id) {
-        LOGGER.info("Input to ApplicationServiceImpl.findApplication, id:{}", id);
-        Optional<Application> application = applicationRepository.findById(id);
-        if (application.isPresent()){
-            Application app = application.get();
-            LOGGER.info("Find application by id response:{}", app);
-            return app;
-        }
-        return null;
+    public List<ApplicationVO> findAll() {
+        LOGGER.info("Inside ApplicationServiceImpl.findAll");
+        List<Application> applications =  applicationRepository.findAll();
+        LOGGER.info("Find all application response: {}", applications);
+        List<ApplicationVO> applicationVOS= applications.stream().map(application -> {
+            ApplicationVO applicationVO = new ApplicationVO();
+            applicationVO.setApplicationId(application.getApplicationId());
+            applicationVO.setApplicationName(application.getApplicationName());
+            applicationVO.setOwner(application.getOwner());
+            applicationVO.setDescription(application.getDescription());
+            return applicationVO;
+        }).collect(Collectors.toList());
+        return applicationVOS;
     }
 
     @Override
