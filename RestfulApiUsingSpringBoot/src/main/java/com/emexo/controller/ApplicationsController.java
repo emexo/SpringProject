@@ -24,17 +24,23 @@ public class ApplicationsController {
 
     //https://localhost:8080/api/v1/applications
     @GetMapping
-    public ResponseEntity<List<Application>> getAllApplications() {
-        LOGGER.info("Inside the ApplicationsController.getAllApplications");
-
+    @GetMapping
+    public ResponseEntity<List<ApplicationVO>> getApplications(){
+        LOGGER.info("Inside the ApplicationController.getApplications");
+        List<ApplicationVO> applicationVOS = null;
         try {
-            List<Application> list = applicationService.listApplications();
-            LOGGER.info("Response from get applications:{} : ", list);
-            return new ResponseEntity<List<Application>>(list, HttpStatus.OK);
-        } catch(Exception ex) {
-            LOGGER.error("Exception while getting applications", ex);
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            applicationVOS = applicationService.findAll();
+            LOGGER.info("Application response:{}", applicationVOS );
+            if(CollectionUtils.isEmpty(applicationVOS)){
+                LOGGER.info("Application details are not found");
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        }catch (Exception ex){
+            LOGGER.error("Exception while calling getApplications", ex);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
+        return new ResponseEntity<List<ApplicationVO>>(applicationVOS, HttpStatus.OK);
     }
 
     //https://localhost:8080/api/v1/applications/1
