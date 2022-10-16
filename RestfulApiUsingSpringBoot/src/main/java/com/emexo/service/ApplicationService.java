@@ -5,7 +5,7 @@ import com.emexo.entity.Application;
 import java.util.List;
 
 public interface ApplicationService {
-    List<Application> listApplications();
+    List<ApplicationVO> listApplications();
     Application findApplication(long id);
     void save(Application application);
 }
