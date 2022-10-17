@@ -37,6 +37,34 @@ public class ApplicationServiceImpl implements ApplicationService {
         }).collect(Collectors.toList());
         return applicationVOS;
     }
+    
+      /**
+     * Find the application by id
+     * @param id
+     * @return
+     * @throws ApplicationException
+     */
+    @Override
+    public ApplicationVO findById(long id) throws ApplicationException{
+        LOGGER.info("Inside ApplicationServiceImpl.findById and id: {}", id);
+        ApplicationVO applicationVO = null;
+        if(id < 0){
+            LOGGER.info("Invalid application id:{}", id);
+            throw new ApplicationException("Application id is not valid");
+        }
+        Optional<Application> application = applicationRepository.findById(id);
+
+        if(application.isPresent()) {
+            LOGGER.info("Application details for the id: {} and the values :{}", id, application.get());
+            applicationVO = new ApplicationVO();
+            applicationVO.setApplicationId(application.get().getApplicationId());
+            applicationVO.setApplicationId(application.get().getApplicationId());
+            applicationVO.setApplicationName(application.get().getApplicationName());
+            applicationVO.setOwner(application.get().getOwner());
+            applicationVO.setDescription(application.get().getDescription());
+        }
+        return applicationVO;
+    }
 
     @Override
     public List<Application> findApplicationByName(String name) throws IllegalArgumentException {
