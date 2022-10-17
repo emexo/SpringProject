@@ -45,14 +45,22 @@ public class ApplicationsController {
 
     //https://localhost:8080/api/v1/applications/1
     @GetMapping("/{id}")
-    public ResponseEntity<Application> getApplication(@PathVariable("id") long id) {
-        LOGGER.info("Inside ApplicationsController.getApplication, id :{}", id);
+    public ResponseEntity<ApplicationVO> getApplicationById(@PathVariable("id") long id){
+        LOGGER.info("Inside the ApplicationController.getApplications");
+       ApplicationVO applicationVO = null;
         try {
-            return new ResponseEntity<Application>(applicationService.findApplication(id), HttpStatus.OK);
-        } catch (ApplicationNotFoundException ex) {
-            LOGGER.error("Exception while getting applications", ex);
+            applicationVO = applicationService.findById(id);
+            LOGGER.info("Application response:{}", applicationVO );
+            if(applicationVO == null){
+                LOGGER.info("Application details are not found");
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        }catch (Exception ex){
+            LOGGER.error("Exception while calling getApplications", ex);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
+        return new ResponseEntity<ApplicationVO>(applicationVO, HttpStatus.OK);
     }
 
     //https://localhost:8080/api/v1/applications?name=appname&id=1
