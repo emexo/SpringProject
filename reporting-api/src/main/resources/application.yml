@@ -1,0 +1,13 @@
+server:
+  port: 9091
+
+logging:
+  level:
+    org:
+      springframework: info
+    com:
+      bugtracking: debug
+  file:
+    name: reportingapi.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"

@@ -1,0 +1,3 @@
+application:
+  url:
+    getall: http://localhost:9090/api/v1/applications
