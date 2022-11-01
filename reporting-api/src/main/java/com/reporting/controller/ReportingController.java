@@ -1,5 +1,6 @@
 package com.reporting.controller;
 
+import com.reporting.model.ApplicationRequest;
 import com.reporting.model.ApplicationVO;
 import com.reporting.service.ReportingService;
 import org.slf4j.Logger;
@@ -8,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class ReportingController {
         LOGGER.info("Inside the ApplicationController.getApplications");
         List<ApplicationVO> applicationVOS = null;
         try {
-            applicationVOS = reportingService.findAll();
+            applicationVOS = reportingService.findAllNew();
             LOGGER.info("Application response:{}", applicationVOS );
             if(CollectionUtils.isEmpty(applicationVOS)){
                 LOGGER.info("Application details are not found");
@@ -39,5 +38,28 @@ public class ReportingController {
         }
 
         return new ResponseEntity<List<ApplicationVO>>(applicationVOS, HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<ApplicationVO> save(@RequestBody ApplicationRequest applicationRequest) {
+        LOGGER.info("Inside ReportingController.save and applicationVO;{}", applicationRequest);
+        if (applicationRequest == null) {
+            LOGGER.info("Invalid Application request");
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        ApplicationVO applicationVO = null;
+        try {
+            applicationVO = reportingService.save(applicationRequest);
+            if (applicationVO == null) {
+                LOGGER.info("Application details are not saved");
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+
+        } catch (Exception ex) {
+            LOGGER.error("Exception while saving application");
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        return new ResponseEntity<>(applicationVO, HttpStatus.OK);
     }
 }
