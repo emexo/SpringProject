@@ -117,6 +117,44 @@ public class ApplicationControllerTest {
 
     }
 
+    @Test
+    public void testUpdateApplication() throws Exception {
+        ApplicationVO applicationVO =new ApplicationVO();
+        applicationVO.setApplicationId(1);
+        applicationVO.setApplicationName("LRI");
+        applicationVO.setDescription("LRI");
+        applicationVO.setOwner("JPMC");
+
+        when(applicationService.save(any())).thenReturn(applicationVO);
+
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.put("/api/v1/applications")
+                .content(asJsonString(applicationVO))
+                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
+
+        mockMvc.perform(requestBuilder).andExpect(status().isOk());
+
+    }
+
+    @Test
+    public void testUpdateApplicationWithEmptyRequest() throws Exception {
+        ApplicationVO applicationVO =new ApplicationVO();
+        applicationVO.setApplicationId(1);
+        applicationVO.setApplicationName("LRI");
+        applicationVO.setDescription("LRI");
+        applicationVO.setOwner("JPMC");
+
+        when(applicationService.save(any())).thenReturn(null);
+
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.put("/api/v1/applications")
+                .content(asJsonString(applicationVO))
+                .contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
+
+        mockMvc.perform(requestBuilder).andExpect(status().isNotFound());
+
+    }
+
+
+
     public String asJsonString(final Object obj) {
         try {
             final ObjectMapper mapper = new ObjectMapper();

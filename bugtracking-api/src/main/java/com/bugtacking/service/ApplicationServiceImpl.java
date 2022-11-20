@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public class ApplicationServiceImpl implements ApplicationService{
         LOGGER.info("Inside ApplicationServiceImpl.findAll");
         List<Application> applications =  applicationRepository.findAll();
         LOGGER.info("Find all application response: {}", applications);
-        List<ApplicationVO> applicationVOS= applications.stream().map(application -> {
+        List<ApplicationVO> applicationVOS= applications.parallelStream().map(application -> {
             ApplicationVO applicationVO = new ApplicationVO();
             applicationVO.setApplicationId(application.getApplicationId());
             applicationVO.setApplicationName(application.getApplicationName());
@@ -48,7 +49,7 @@ public class ApplicationServiceImpl implements ApplicationService{
      * @return
      * @throws ApplicationNotFoundException
      */
-    @Cacheable(value = "findbyid")
+    @Cacheable("findById")
     @Async("asyncBean")
     @Override
     public CompletableFuture<ApplicationVO> findById(long id) throws ApplicationNotFoundException, InterruptedException {
@@ -79,7 +80,7 @@ public class ApplicationServiceImpl implements ApplicationService{
      * @return
      * @throws ApplicationNotFoundException
      */
-    @Cacheable("findbyname")
+    @Cacheable("findByName")
     @Async("asyncBean")
     @Override
     public CompletableFuture<ApplicationVO> findByName(String name) throws ApplicationNotFoundException, InterruptedException {
@@ -109,6 +110,7 @@ public class ApplicationServiceImpl implements ApplicationService{
      * @param applicationRequest
      * @return
      */
+
     public ApplicationVO save(ApplicationRequest applicationRequest) throws ApplicationNotFoundException {
         LOGGER.info("Inside the ApplicationServiceImpl.save method and params, applicationRequest:{}", applicationRequest);
 
@@ -160,12 +162,12 @@ public class ApplicationServiceImpl implements ApplicationService{
         return "Application has been deleted";
     }
 
-    @CacheEvict(value = "findbyname",allEntries = true)
+    @CacheEvict(value = "findByName",allEntries = true)
     public void clearFindByNameCache(){
 
     }
 
-    @CacheEvict(value = "findbyid", allEntries = true)
+    @CacheEvict(value = "findById", allEntries = true)
     public void clearFindByIdcCache(){
 
     }
