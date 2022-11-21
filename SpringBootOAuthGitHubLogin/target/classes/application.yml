@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    password: password
+    url: jdbc:h2:mem:bugtracker
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+      path: '/h2'
+  security:
+    oauth2:
+      client:
+        registration:
+         github:
+          clientId: 074d166086f317ed4ec9
+          clientSecret: c50ca06ec6d44120cfd19afeccf7005fe86bcc72
+          scope:
+           - user:email
+           - read:user      
