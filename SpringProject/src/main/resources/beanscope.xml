@@ -7,18 +7,10 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<bean id="emp1" class="com.springproject.di.constructor.Employee">
-		<constructor-arg index="1" value="Regu" />
-		<constructor-arg index="0" value="1" />
-	</bean>
-	<bean id="emp2" class="com.springproject.di.constructor.Employee">
-		<constructor-arg value="2" />
-		<constructor-arg value="Sanjay" />
+	<bean id="emp1" class="com.springproject.scope.Employee" scope="singleton">
+		<property name="empId" value="1"/>
+		<property name="empName" value="Regu"/>
 	</bean>
 
-	<bean id="emp3" class="com.springproject.di.constructor.Employee">
-		<constructor-arg name="empId" value="3" />
-		<constructor-arg name="empName" value="Raju" />
-	</bean>
 
 </beans>

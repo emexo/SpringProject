@@ -8,10 +8,10 @@
         <property name="name" value="Hathi"/>
         <property name="age" value="30"/>
     </bean>
-    <bean id="animal" class="com.emexo.spring.inheritance.Animal" parent="template">
+    <bean id="animal" class="com.springproject.inheritance.Animal" parent="template" >
         <property name="age" value="50"/>
     </bean>
-    <bean id="elephant" class="com.emexo.spring.inheritance.Elephant" parent="animal">
+    <bean id="elephant" class="com.springproject.inheritance.Elephant" parent="animal" init-method="initElephant" destroy-method="destroyElephant" >
         <property name="location" value="Delhi"/>
     </bean>
 </beans>

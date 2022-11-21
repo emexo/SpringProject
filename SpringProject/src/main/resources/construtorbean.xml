@@ -7,17 +7,19 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <bean id="marks" class="com.emexo.spring.di.constructorbean.Marks">
-        <constructor-arg index="0" value="90"/>
-        <constructor-arg index="1" value="80"/>
+    <bean id="mark1" class="com.springproject.di.constructorbean.Marks">
+        <constructor-arg index="1" value="90"/>
+        <constructor-arg index="0" value="80"/>
         <constructor-arg index="2" value="70"/>
     </bean>
 
-    <bean id="student" class="com.emexo.spring.di.constructorbean.Student">
-        <constructor-arg index="0" value="1"/>
+    <bean id="student" class="com.springproject.di.constructorbean.Student">
+
+        <constructor-arg index="0" value="1" />
         <constructor-arg index="1" value="Anand"/>
         <constructor-arg index="2" value="Bangalore"/>
-        <constructor-arg index="3" ref="marks"/>
+        <constructor-arg index="3" ref="mark1" />
+
     </bean>
 
 </beans>

@@ -7,17 +7,17 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <bean id="marks" class="com.emexo.spring.di.setterbean.Marks">
+    <bean id="marks" class="com.springproject.di.setterbean.Marks">
         <property name="mark1" value="90"/>
         <property name="mark2" value="80"/>
         <property name="mark3" value="70"/>
     </bean>
 
-    <bean id="student" class="com.emexo.spring.di.setterbean.Student">
+    <bean id="student" class="com.springproject.di.setterbean.Student" >
         <property name="studentId" value="1"/>
         <property name="studentName" value="Anand"/>
         <property name="address" value="Bangalore"/>
-        <property name="marks" ref="marks"/>
+       <property name="marks" ref="marks" />
     </bean>
 
 </beans>

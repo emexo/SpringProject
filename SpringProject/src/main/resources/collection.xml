@@ -4,12 +4,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="student" class="com.emexo.spring.di.collection.Student">
+    <bean id="student1" class="com.springproject.di.collection.Student">
+        <property name="studentId" value="1"/>
+        <property name="studentName" value="Regu"/>
+    </bean>
+    <bean id="student2" class="com.springproject.di.collection.Student">
         <property name="studentId" value="1"/>
         <property name="studentName" value="Regu"/>
     </bean>
 
-    <bean id="college" class="com.emexo.spring.di.collection.College">
+    <bean id="college" class="com.springproject.di.collection.College">
         <property name="staffName">
             <list>
                 <value>Gary</value>
@@ -20,7 +24,8 @@
 
         <!--<property name="staffName">
             <list>
-                <ref bean="student"/>
+                <ref bean="student1"/>
+                <ref bean="student2"/>
             </list>
         </property>-->
 
@@ -54,7 +59,7 @@
 
        <!-- <property name="faculties">
             <map>
-                <entry key-ref="student" value-ref="student" />
+                <entry key-ref="student1" value-ref="studentList" />
             </map>
         </property>-->
 

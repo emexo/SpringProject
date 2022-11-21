@@ -10,15 +10,14 @@
 
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.emexo.spring.xml.annotation"/>
+	<context:component-scan base-package="com.bugtracking.spring.xml.annotation"/>
 
-	<bean id="customer" class="com.emexo.spring.xml.annotation.Customer"
+	<bean id="customer" class="com.springproject.xml.annotation.Customer"
 		  init-method="init" destroy-method="destroy" scope="singleton">
 		<property name="action" value="User" />
-		<property name="type" value="1" />
 
 	</bean>
-	<bean id="person" class="com.emexo.spring.xml.annotation.Person" >
+	<bean id="person" class="com.springproject.xml.annotation.Person" >
 		<property name="name" value="Test" />
 	</bean>
 </beans>
