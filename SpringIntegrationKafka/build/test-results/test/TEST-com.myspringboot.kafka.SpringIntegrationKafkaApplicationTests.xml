@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.myspringboot.kafka.SpringIntegrationKafkaApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-02T03:44:46" hostname="DESKTOP-CBBV1CT" time="2.62">
+  <properties/>
+  <testcase name="testIntegration()" classname="com.myspringboot.kafka.SpringIntegrationKafkaApplicationTests" time="2.62"/>
+  <system-out><![CDATA[09:14:42.398 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+09:14:42.422 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+09:14:42.507 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.myspringboot.kafka.SpringIntegrationKafkaApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+09:14:42.521 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.myspringboot.kafka.SpringIntegrationKafkaApplicationTests], using SpringBootContextLoader
+09:14:42.527 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.myspringboot.kafka.SpringIntegrationKafkaApplicationTests]: class path resource [com/myspringboot/kafka/SpringIntegrationKafkaApplicationTests-context.xml] does not exist
+09:14:42.528 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.myspringboot.kafka.SpringIntegrationKafkaApplicationTests]: class path resource [com/myspringboot/kafka/SpringIntegrationKafkaApplicationTestsContext.groovy] does not exist
+09:14:42.528 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.myspringboot.kafka.SpringIntegrationKafkaApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+09:14:42.529 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.myspringboot.kafka.SpringIntegrationKafkaApplicationTests]: SpringIntegrationKafkaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+09:14:42.648 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.myspringboot.kafka.SpringIntegrationKafkaApplicationTests]
+09:14:42.810 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\Sujith Nair\IdeaProjects\SpringIntegrationKafka\build\classes\java\main\com\myspringboot\kafka\SpringIntegrationKafkaApplication.class]
+09:14:42.813 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.myspringboot.kafka.SpringIntegrationKafkaApplication for test class com.myspringboot.kafka.SpringIntegrationKafkaApplicationTests
+09:14:43.028 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.myspringboot.kafka.SpringIntegrationKafkaApplicationTests]: using defaults.
+09:14:43.029 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+09:14:43.044 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [javax/servlet/ServletContext]
+09:14:43.067 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@bcef303, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@41709512, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@42039326, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@33308786, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4f9a2c08, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a87f8ec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5443d039, org.springframework.test.context.event.EventPublishingTestExecutionListener@63787180, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7d1cfb8b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@48e92c5c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2e1ef60, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@22356acd, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@386f0da3, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@39655d3e]
+09:14:43.083 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@5dcb4f5f testClass = SpringIntegrationKafkaApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@71812481 testClass = SpringIntegrationKafkaApplicationTests, locations = '{}', classes = '{class com.myspringboot.kafka.SpringIntegrationKafkaApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@65f8f5ae, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5884a914, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1a4927d6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4b520ea8, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@475c9c31, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@4c9f8c13], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+09:14:43.111 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@5dcb4f5f testClass = SpringIntegrationKafkaApplicationTests, testInstance = com.myspringboot.kafka.SpringIntegrationKafkaApplicationTests@6d1ef78d, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@71812481 testClass = SpringIntegrationKafkaApplicationTests, locations = '{}', classes = '{class com.myspringboot.kafka.SpringIntegrationKafkaApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@65f8f5ae, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5884a914, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1a4927d6, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4b520ea8, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@475c9c31, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@4c9f8c13], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.6)
+
+2022-12-02 09:14:43.885  INFO 23600 --- [    Test worker] k.SpringIntegrationKafkaApplicationTests : Starting SpringIntegrationKafkaApplicationTests using Java 1.8.0_341 on DESKTOP-CBBV1CT with PID 23600 (started by Sujith Nair in C:\Users\Sujith Nair\IdeaProjects\SpringIntegrationKafka)
+2022-12-02 09:14:43.887 DEBUG 23600 --- [    Test worker] k.SpringIntegrationKafkaApplicationTests : Running with Spring Boot v2.7.6, Spring v5.3.24
+2022-12-02 09:14:43.888  INFO 23600 --- [    Test worker] k.SpringIntegrationKafkaApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2022-12-02 09:14:44.839  INFO 23600 --- [    Test worker] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2022-12-02 09:14:44.892  INFO 23600 --- [    Test worker] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2022-12-02 09:14:45.203  INFO 23600 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-02 09:14:45.244  INFO 23600 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-02 09:14:46.708  INFO 23600 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2022-12-02 09:14:46.710  INFO 23600 --- [    Test worker] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2022-12-02 09:14:46.711  INFO 23600 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2022-12-02 09:14:46.712  INFO 23600 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : Adding {kafka:outbound-channel-adapter:producingChannelConfiguration.kafkaMessageHandler.serviceActivator} as a subscriber to the 'producingChannel' channel
+2022-12-02 09:14:46.712  INFO 23600 --- [    Test worker] o.s.integration.channel.DirectChannel    : Channel 'application.producingChannel' has 1 subscriber(s).
+2022-12-02 09:14:46.713  INFO 23600 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : started bean 'producingChannelConfiguration.kafkaMessageHandler.serviceActivator'
+2022-12-02 09:14:46.740  INFO 23600 --- [    Test worker] k.SpringIntegrationKafkaApplicationTests : Started SpringIntegrationKafkaApplicationTests in 3.581 seconds (JVM running for 8.588)
+2022-12-02 09:14:47.861  INFO 23600 --- [    Test worker] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2022-12-02 09:14:48.124  INFO 23600 --- [    Test worker] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Instantiated an idempotent producer.
+2022-12-02 09:14:48.382  INFO 23600 --- [    Test worker] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.2
+2022-12-02 09:14:48.388  INFO 23600 --- [    Test worker] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f8c67dc3ae0a3265
+2022-12-02 09:14:48.388  INFO 23600 --- [    Test worker] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1669952688369
+2022-12-02 09:14:49.322  INFO 23600 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Resetting the last seen epoch of partition test-0 to 0 since the associated topicId changed from null to a0navrH-SnWfns9C0MZ2cg
+2022-12-02 09:14:49.329  INFO 23600 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: 2aZqhAk0TOSEwIQ1xMZG5A
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

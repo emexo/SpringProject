@@ -1,0 +1,118 @@
+2022-12-02 09:14:43 - Starting SpringIntegrationKafkaApplicationTests using Java 1.8.0_341 on DESKTOP-CBBV1CT with PID 23600 (started by Sujith Nair in C:\Users\Sujith Nair\IdeaProjects\SpringIntegrationKafka)
+2022-12-02 09:14:43 - Running with Spring Boot v2.7.6, Spring v5.3.24
+2022-12-02 09:14:43 - No active profile set, falling back to 1 default profile: "default"
+2022-12-02 09:14:44 - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2022-12-02 09:14:44 - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2022-12-02 09:14:45 - Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-02 09:14:45 - Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-12-02 09:14:46 - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2022-12-02 09:14:46 - Channel 'application.errorChannel' has 1 subscriber(s).
+2022-12-02 09:14:46 - started bean '_org.springframework.integration.errorLogger'
+2022-12-02 09:14:46 - Adding {kafka:outbound-channel-adapter:producingChannelConfiguration.kafkaMessageHandler.serviceActivator} as a subscriber to the 'producingChannel' channel
+2022-12-02 09:14:46 - Channel 'application.producingChannel' has 1 subscriber(s).
+2022-12-02 09:14:46 - started bean 'producingChannelConfiguration.kafkaMessageHandler.serviceActivator'
+2022-12-02 09:14:46 - Started SpringIntegrationKafkaApplicationTests in 3.581 seconds (JVM running for 8.588)
+2022-12-02 09:14:47 - ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2022-12-02 09:14:48 - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2022-12-02 09:14:48 - Kafka version: 3.1.2
+2022-12-02 09:14:48 - Kafka commitId: f8c67dc3ae0a3265
+2022-12-02 09:14:48 - Kafka startTimeMs: 1669952688369
+2022-12-02 09:14:49 - [Producer clientId=producer-1] Resetting the last seen epoch of partition test-0 to 0 since the associated topicId changed from null to a0navrH-SnWfns9C0MZ2cg
+2022-12-02 09:14:49 - [Producer clientId=producer-1] Cluster ID: 2aZqhAk0TOSEwIQ1xMZG5A
+2022-12-02 09:14:49 - [Producer clientId=producer-1] ProducerId set to 2000 with epoch 0
+2022-12-02 09:14:49 - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2022-12-02 09:14:49 - Channel 'application.errorChannel' has 0 subscriber(s).
+2022-12-02 09:14:49 - stopped bean '_org.springframework.integration.errorLogger'
+2022-12-02 09:14:49 - Removing {kafka:outbound-channel-adapter:producingChannelConfiguration.kafkaMessageHandler.serviceActivator} as a subscriber to the 'producingChannel' channel
+2022-12-02 09:14:49 - Channel 'application.producingChannel' has 0 subscriber(s).
+2022-12-02 09:14:49 - stopped bean 'producingChannelConfiguration.kafkaMessageHandler.serviceActivator'
+2022-12-02 09:14:49 - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2022-12-02 09:14:49 - Metrics scheduler closed
+2022-12-02 09:14:49 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-12-02 09:14:49 - Metrics reporters closed
+2022-12-02 09:14:49 - App info kafka.producer for producer-1 unregistered
