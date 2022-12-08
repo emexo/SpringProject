@@ -110,7 +110,7 @@ public class ApplicationServiceImpl implements ApplicationService{
      * @param applicationRequest
      * @return
      */
-
+    @PreAuthorize("ADMIN")
     public ApplicationVO save(ApplicationRequest applicationRequest) throws ApplicationNotFoundException {
         LOGGER.info("Inside the ApplicationServiceImpl.save method and params, applicationRequest:{}", applicationRequest);
 
