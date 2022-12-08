@@ -49,7 +49,7 @@ public class ReportingController {
         }
         ApplicationVO applicationVO = null;
         try {
-            applicationVO = reportingService.save(applicationRequest);
+            applicationVO = reportingService.saveNew(applicationRequest);
             if (applicationVO == null) {
                 LOGGER.info("Application details are not saved");
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
