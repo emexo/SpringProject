@@ -1,0 +1,23 @@
+server:
+  port: 1090
+
+# To set logs level as per your need.
+logging:
+  level:
+    org:
+      springframework: info
+    com:
+      myspringboot:
+        kafka: debug
+  file:
+    name: spring_app_log_file.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+eureka:
+  client:
+    register-with-eureka: false
+
+    fetch-registry: false
+
+
