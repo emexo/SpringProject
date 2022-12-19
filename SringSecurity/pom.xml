@@ -35,7 +35,7 @@
 			<version>2.1.5.RELEASE</version>
 		</dependency>
 
-		<dependency>
+	<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
