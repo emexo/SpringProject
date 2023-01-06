@@ -8,6 +8,7 @@ public class Release {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String releaseDate;
+
     private String description;
 
     public Release() {

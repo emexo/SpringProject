@@ -7,10 +7,10 @@ import com.emexo.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
+
+import java.sql.SQLException;
 
 @Controller
 public class TzaController {
@@ -48,12 +48,33 @@ public class TzaController {
 
     @PostMapping("/applicationsave")
     public RedirectView submitForm(@ModelAttribute("application") Application application) {
-        applicationService.save(application);
+        try {
+            applicationService.save(application);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
 
         RedirectView redirectView = new RedirectView();
         redirectView.setContextRelative(true);
         redirectView.setUrl("/applications");
         return redirectView;
+    }
+
+    @GetMapping("/applicationdelete/{id}")
+    public RedirectView delete(@PathVariable("id") int id) {
+        applicationService.delete(id);
+
+        RedirectView redirectView = new RedirectView();
+        redirectView.setContextRelative(true);
+        redirectView.setUrl("/applications");
+        return redirectView;
+    }
+
+    @GetMapping("/applicationedit/{id}")
+    public String applicationEdit(@PathVariable("id") int id, Model model) {
+        Application application = applicationService.getApplication(id);
+        model.addAttribute("application", application);
+        return "applicationedit";
     }
 
     @GetMapping("/tickets")

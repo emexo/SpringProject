@@ -4,7 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <style type="text/css">
+    label {
+        display: inline-block;
+        width: 200px;
+        margin: 5px;
+        text-align: left;
+    }
+    input[type=text], input[type=password], select {
+        display: inline-block;
+        width: 200px;
+    }
+    input[type=radio] {
+        margin-left: 45px;
+    }
+    input[type=checkbox] {
+        margin-right: 190px;
+    }
+    button {
+        padding: 5px;
+        margin: 10px;
+    }
+</style>
     <title>Trackzilla Applications</title>
 </head>
 <body>
@@ -12,29 +33,24 @@
     <div th:insert="fragments/navbar.html"> </div>
 
     <div class="jumbotron">
-        <h3>Applications</h3>
-<table class="table table-striped">
-    <thead class="thead-dark">
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Owner</th>
-        <th scope="col">Action</th>
-    </tr>
-    </thead>
-    <tbody>
+        <div align="center">
+            <h2>Application Create</h2>
+            <br>
+            <form action="#" th:action="@{/applicationsave}" method="post" th:object="${application}">
+                <label>Id:</label>
+                <input type="text" th:field="*{id}" /><br/>
+                <label>Full name:</label>
+                <input type="text" th:field="*{name}" /><br/>
 
-    <tr th:each="item : ${applications}">
-        <td th:text="${item.id}"></td>
-        <td th:text="${item.name}"></td>
-        <td th:text="${item.description}"></td>
-        <td th:text="${item.owner}"></td>
-        <td><a th:href="@{'/applicationdelete/' + ${item.id}}">Delete</a>
-            <a th:href="@{'/applicationedit/' + ${item.id}}">Edit</a></td>
-    </tr>
-    </tbody>
-</table>
+                <label>Description:</label>
+                <input type="text" th:field="*{description}" /><br/>
+
+                <label>Owner:</label>
+                <input type="text" th:field="*{owner}" /><br/>
+
+                <button type="submit">Save</button>
+            </form>
+        </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
