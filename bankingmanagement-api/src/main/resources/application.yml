@@ -1,0 +1,23 @@
+server:
+  port: 9090
+
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+    url: jdbc:h2:mem:bankingmanagement
+
+# To set logs level as per your need.
+logging:
+  level:
+    org:
+      springframework: info
+    com:
+      bankingmanagement: debug
+  file:
+    name: spring_app_log_file.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
