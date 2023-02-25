@@ -5,5 +5,6 @@ import com.bankingmanagement.model.BranchDTO;
 
 public interface BranchService {
     BranchDTO getBranchById(int branchCode) throws BranchDetailsNotFound;
+    BranchDTO getBranchByName(String branchName) throws BranchDetailsNotFound;
 
 }

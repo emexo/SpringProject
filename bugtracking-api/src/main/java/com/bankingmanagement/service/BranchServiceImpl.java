@@ -39,4 +39,25 @@ public class BranchServiceImpl implements  BranchService{
 
         return branchDTO;
     }
+
+    @Override
+    public BranchDTO getBranchByName(String branchName) throws BranchDetailsNotFound {
+        log.info("Input to BranchServiceImpl.getBranchByName, branchName:{}", branchName);
+        Optional<Branch> branchOptional=  branchRepository.findByBranchName(branchName);
+
+        if(!branchOptional.isPresent()){
+            log.info("Branch details not found");
+            throw new BranchDetailsNotFound("Branch details not found");
+        }
+        Branch branch1 = branchOptional.get();
+        BranchDTO branchDTO = new BranchDTO();
+        branchDTO.setBranchName(branch1.getBranchName());
+        branchDTO.setBranchAddress(branch1.getBranchAddress());
+        Bank bank = branch1.getBank();
+        branchDTO.setBankCode(bank.getBankCode());
+        branchDTO.setBankName(bank.getBankName());
+        branchDTO.setBankAddress(bank.getBankAddress());
+
+        return branchDTO;
+    }
 }
