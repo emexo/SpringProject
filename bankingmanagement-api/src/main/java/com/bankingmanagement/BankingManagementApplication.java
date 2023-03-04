@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Slf4j
-@SpringBootApplication(scanBasePackages = {""})
+@SpringBootApplication
 public class BankingManagementApplication {
 
 	public static void main(String[] args) {

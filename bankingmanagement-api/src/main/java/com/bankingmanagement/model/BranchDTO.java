@@ -10,4 +10,8 @@ import javax.persistence.Column;
 public class BranchDTO {
     private String branchName;
     private String branchAddress;
+    private int bankCode;
+    private String bankName;
+    private String bankAddress;
+
 }
