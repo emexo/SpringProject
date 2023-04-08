@@ -8,4 +8,7 @@ security:
        clientAuthenticationScheme: form
     resource:
       user-info-uri: https://api.github.com/user
-      prefer-token-info: false 
+      prefer-token-info: false
+
+server:
+  port : 9090

@@ -10,14 +10,8 @@ import java.security.Principal;
 
 @SpringBootApplication
 @EnableOAuth2Sso
-@RestController
 public class SpringCloudOauth2ExampleApplication {
 	
-	@GetMapping("/")
-	public String message(Principal principal) {
-		return "Hi "+principal.getName()+" welcome to SpringCloudOauth2ExampleApplication";
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(SpringCloudOauth2ExampleApplication.class, args);
 	}
