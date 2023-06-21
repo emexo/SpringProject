@@ -23,6 +23,7 @@ public class BranchRepositoryTest {
         saveBranch();
         Optional<Branch>  branchOptional = branchRepository.findByBranchName("BTM");
         assertEquals("BTM", branchOptional.get().getBranchName());
+        assertEquals("Bangalore", branchOptional.get().getBranchAddress());
     }
 
     public void saveBranch(){

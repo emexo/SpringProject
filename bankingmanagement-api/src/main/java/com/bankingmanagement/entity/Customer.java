@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
@@ -22,5 +23,8 @@ public class Customer {
 
     @Column(name = "Customer_Phone")
     private String customerPhone;
+
+    @OneToMany(mappedBy = "customer")
+    private Set<Account> accountSet;
 
 }

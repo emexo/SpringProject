@@ -11,6 +11,6 @@ public interface BranchRepository extends JpaRepository<Branch, Integer> {
     Optional<Branch> findByBranchName(String branchName);
 
     @Query(value = "select branch from Branch branch where branchName=:branchName")
-    public Optional<Branch> findBranchByName(@Param("branchName") String branchName);
+    Optional<Branch> findBranchByName(@Param("branchName") String branchName);
 
 }

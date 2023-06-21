@@ -15,7 +15,8 @@ public class Branch implements Serializable {
     public static final long serialVersionUID= 1878678757l;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BRANCH_ID_SEQ")
+    @SequenceGenerator(name = "BRANCH_ID_SEQ", sequenceName = "branch_id_sequence",allocationSize = 1)
     @Column(name = "Branch_ID")
     private  int branchId;
 

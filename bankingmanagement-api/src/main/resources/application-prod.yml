@@ -1,0 +1,14 @@
+server:
+  port: 9095
+
+
+logging:
+  level:
+    org:
+      springframework: info
+    com:
+      bugtracking: debug
+  file:
+    name: spring_app_log_file.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"

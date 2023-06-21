@@ -19,7 +19,7 @@ public class BranchController {
     @Autowired
     BranchService branchService;
 
-    //http://localhost:9090/api/v1/branches/1
+    //http://localhost:9090/api/v1/branches?id=1&name=nnn
     @GetMapping("/{branchId}")
     public ResponseEntity<BranchDTO> getBranchById(@PathVariable("branchId") int branchId){
         log.info("Input to BranchController.getBranchById, branchId:{}", branchId);
